@@ -51,7 +51,7 @@
                             </td>
                             <td>
                                 <a href="/absen/{{ $absen->id }}/edit" class="btn btn-warning mb-3" style="color:white;">Edit</a>
-                                <form method="post" action="">
+                                <form method="post" action="/absen/{{ $absen->id }}">
                                     @method('delete')
                                     @csrf
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure delete data?')">Delete</button>
@@ -59,8 +59,7 @@
                             </td>
                         </tr>
                         @empty
-                        <span class="text-danget">Tidak ada data..</span>
-
+                        <td class="text-danget" colspan="10">Tidak ada data..</td>
                         @endforelse
                     </tbody>
                 </table>
